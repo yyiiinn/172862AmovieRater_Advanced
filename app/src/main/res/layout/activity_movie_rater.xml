@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".movieRater" android:orientation="vertical">
+
+    <TextView
+            android:text="Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="4dp" tools:layout_editor_absoluteX="0dp"
+            android:id="@+id/textView"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/namefield" android:hint="Enter the title of movie "/>
+    <TextView
+            android:text="Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="59dp"
+            tools:layout_editor_absoluteX="0dp" android:id="@+id/textView2"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/descfield" android:hint="Enter a short description of the movie"/>
+    <TextView
+            android:text="Language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="130dp"
+            tools:layout_editor_absoluteX="0dp" android:id="@+id/textView3"/>
+    <RadioGroup
+            android:layout_width="382dp"
+            android:layout_height="36dp" tools:layout_editor_absoluteY="159dp"
+            tools:layout_editor_absoluteX="0dp" android:orientation="horizontal"
+            android:checkedButton="@+id/radioButton" android:id="@+id/radioGroup">
+        <RadioButton
+                android:text="English"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Chinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton2" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Malay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton3" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton4" android:layout_weight="1"/>
+    </RadioGroup>
+    <TextView
+            android:text="Release Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="204dp"
+            tools:layout_editor_absoluteX="0dp" android:id="@+id/textView4"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/releasedate" android:hint="Enter release date"/>
+    <CheckBox
+            android:text="Not Suitable for all audiance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="257dp"
+            tools:layout_editor_absoluteX="0dp" android:id="@+id/suitableage"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content" android:layout_width="match_parent" android:weightSum="1">
+        <CheckBox
+                android:text="Language Used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="289dp"
+                tools:layout_editor_absoluteX="144dp" android:id="@+id/languageUsed"
+                android:visibility="invisible" android:layout_weight="0.5"/>
+        <CheckBox
+                android:text="Violence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="289dp"
+                tools:layout_editor_absoluteX="0dp" android:id="@+id/violence"
+                android:visibility="invisible" android:layout_weight="0.5"/>
+    </LinearLayout>
+
+
+</LinearLayout>
