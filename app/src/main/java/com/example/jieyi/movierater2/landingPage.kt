@@ -22,8 +22,7 @@ class landingPage : AppCompatActivity() {
 //        PreferenceManager.getDefaultSharedPreferences(this).edit().clear().apply()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
-        add.text = "You have not added a movie" + "\n" + "Long press me to add a movie"
-        registerForContextMenu(add)
+
 //        val preferences = PreferenceManager.getDefaultSharedPreferences(this).getAll()
 //        var text3 = ""
 //        var itemList = ArrayList<String>()
@@ -55,31 +54,19 @@ class landingPage : AppCompatActivity() {
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        getMenuInflater().inflate(R.menu.addmovie_menu, menu)
-//        return super.onCreateOptionsMenu(menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//        if(item?.itemId == R.id.add){
-//            val intent = Intent(this, movieRater::class.java)
-//            startActivity(intent)
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
-
-    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         getMenuInflater().inflate(R.menu.addmovie_menu, menu)
-        super.onCreateContextMenu(menu, v, menuInfo)
+        return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onContextItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == R.id.add){
             val intent = Intent(this, movieRater::class.java)
             startActivity(intent)
         }
-        return super.onContextItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
+
 
 
 }

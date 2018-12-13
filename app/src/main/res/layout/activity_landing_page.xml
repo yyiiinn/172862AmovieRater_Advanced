@@ -10,11 +10,6 @@
         app:layout_constraintLeft_toRightOf="parent">
 
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/add"
-                android:gravity="center"
-            />
+
 
 </LinearLayout>
