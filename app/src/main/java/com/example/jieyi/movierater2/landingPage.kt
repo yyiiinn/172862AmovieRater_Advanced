@@ -26,10 +26,10 @@ class landingPage : AppCompatActivity() {
         if(movieArray.isNotEmpty()){
         val adapter = MovieAdapter(this, movieArray)
         movieList.adapter = adapter
-            movieList.onItemClickListener = AdapterView.OnItemClickListener {parent, view, position, id ->
-                // This is your listview's selected item
-                val item = movieList.getItemAtPosition(position)
-                textView8.text = item.toString()
+            movieList.setOnItemClickListener { _,_,position,_ ->
+                val intent = Intent(this, movieDetails::class.java)
+                intent.putExtra("moviePosition", position)
+                startActivity(intent)
             }
         }
 

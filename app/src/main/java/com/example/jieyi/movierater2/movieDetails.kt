@@ -32,12 +32,6 @@ class movieDetails : AppCompatActivity() {
         val movie = movieList.getMovieList()
         val position = intent.getIntExtra("moviePosition", 0)
         var movieInfo = movieList.getMovieList().elementAt(position.toInt())
-        if(position.toInt() == 0 || position == null){
-            movieInfo = movie.last()
-        }
-        else{
-            movieInfo = movieList.getMovieList().elementAt(position.toInt())
-        }
         nameView.text =  movieInfo.getMovieTitle()
         descView.text =  movieInfo.getMovieDesc()
         languageView.text = movieInfo.getMovieLanguage()

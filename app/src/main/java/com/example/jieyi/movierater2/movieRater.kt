@@ -118,7 +118,7 @@ class movieRater : AppCompatActivity() {
                 }
                 movieAL.AddMovie(newMovie)
                 val intent = Intent(this, movieDetails::class.java)
-                intent.putExtra("moviePosition", intent.getIntExtra("moviePosition", 0))
+                intent.putExtra("moviePosition", movieAL.getMovieList().size-1)
                 startActivity(intent)
             }
         }
