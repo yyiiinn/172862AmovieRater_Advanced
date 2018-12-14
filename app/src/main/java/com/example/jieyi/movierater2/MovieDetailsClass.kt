@@ -13,15 +13,6 @@ class MovieDetailsClass: Application(){
     var violence:Boolean = false
     var rating:Float = 0.0f
     var review:String = ""
-//    init{
-//        this.title = title
-//        this.overview = overview
-//        this.language = language
-//        this.date = date
-//        this.suitable = suitable
-//        this.strongLanguage = strongLanguage
-//        this.violence = violence
-//    }
 
     fun getMovieTitle():String{
         return title
@@ -77,40 +68,4 @@ class MovieDetailsClass: Application(){
     fun setMovieReview(review:String){
         this.review = review
     }
-//    var title: String = ""
-//        get() = title
-//        set(value){
-//            title = value
-//        }
-//
-//    var overview: String
-//       get() = overview
-//        set(value){
-//            overview = value
-//        }
-//
-//    var language: String
-//        get() = language
-//        set(value){
-//            language = value
-//        }
-//
-//    var date: String
-//        get() = date
-//        set(value){
-//            date = value
-//        }
-//    var suitable: String
-//        get() = suitable
-//        set(value){
-//            suitable = value
-//        }
-//    init{
-//        this.title = title
-//        this.overview = overview
-//        this.language = language
-//        this.date = date
-//        this.suitable = suitable
-//    }
-
 }

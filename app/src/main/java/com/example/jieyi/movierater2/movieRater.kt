@@ -97,15 +97,8 @@ class movieRater : AppCompatActivity() {
                 suitable = "Yes"
             }
             if(btnValidate()==true) {
-//                val list = StringBuilder()
-//                list.append(name).append(",")
-//                list.append(description).append(",")
-//                list.append(radio()).append(",")
-//                list.append(date).append(",")
-//                list.append(suitable).append(",")
-//                var list = ArrayList<String>()
-
-                val newMovie = applicationContext as MovieDetailsClass
+                val movieAL = applicationContext as movieList
+                val newMovie = MovieDetailsClass()
                 newMovie.setMovieTitle(name)
                 newMovie.setMovieDesc(description)
                 newMovie.setMovieLanguage(radio())
@@ -123,15 +116,7 @@ class movieRater : AppCompatActivity() {
                 else{
                     newMovie.setMovieviolence(false)
                 }
-//                list.add(name)
-//                list.add(description)
-//                list.add(radio())
-//                list.add(date)
-//                list.add(suitable)
-//                val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-//                val editor = preferences.edit()
-//                editor.putString(name, list.toString())
-//                editor.commit()
+                movieAL.AddMovie(newMovie)
                 val intent = Intent(this, movieDetails::class.java)
                 startActivity(intent)
             }

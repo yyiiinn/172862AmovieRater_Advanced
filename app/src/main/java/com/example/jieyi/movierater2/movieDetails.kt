@@ -19,36 +19,17 @@ import android.content.SharedPreferences
 
 
 class movieDetails : AppCompatActivity() {
-//    class Details(title:String, overview:String, language:String, date:String, suitable:String){
-//        var title: String
-//        var overview: String
-//        var language: String
-//        var date: String
-//        var suitable: String
-//        init{
-//            this.title = title
-//            this.overview = overview
-//            this.language = language
-//            this.date = date
-//            this.suitable = suitable
-//        }
-//
-//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
-        nameView.text =  "fgdf"
-        descView.text =  "fdsf"
-        languageView.text = "fd"
-        dateView.text = "gfd"
-        suitableView.text = "gfdgvd"
         registerForContextMenu(linear)
         var review = intent.getStringExtra("rating")
         var starrating = intent.getStringExtra("bar")
         val linearLayout = findViewById<LinearLayout>(R.id.linear)
-        val movieInfo = applicationContext as MovieDetailsClass
+        val movieAL = applicationContext as movieList
+        val movieInfo = movieAL.getMovieList()[0]
         nameView.text =  movieInfo.getMovieTitle()
         descView.text =  movieInfo.getMovieDesc()
         languageView.text = movieInfo.getMovieLanguage()
