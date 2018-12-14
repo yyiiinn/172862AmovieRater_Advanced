@@ -7,7 +7,6 @@ import kotlinx.android.synthetic.main.activity_landing_page.*
 import kotlinx.android.synthetic.main.movieitem.*
 import android.R.id.edit
 import android.content.Context
-import android.graphics.Movie
 import android.view.*
 import kotlinx.android.synthetic.main.activity_movie_rater.*
 import android.graphics.drawable.Drawable
@@ -61,6 +60,7 @@ class landingPage : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == R.id.add){
             val intent = Intent(this, movieRater::class.java)
+            intent.putExtra("moviePosition", 0)
             startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
@@ -74,7 +74,6 @@ class landingPage : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem?): Boolean {
         val info = item?.menuInfo as AdapterView.AdapterContextMenuInfo
         if(item?.itemId == R.id.edit){
-
             val intent = Intent(this, editMovie::class.java)
             intent.putExtra("position", info.id.toInt())
             startActivity(intent)

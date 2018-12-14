@@ -28,13 +28,22 @@ class movieDetails : AppCompatActivity() {
         var review = intent.getStringExtra("rating")
         var starrating = intent.getStringExtra("bar")
         val linearLayout = findViewById<LinearLayout>(R.id.linear)
-        val movieAL = applicationContext as movieList
-        val movieInfo = movieAL.getMovieList()[0]
+        val movieList = applicationContext as movieList
+        val movie = movieList.getMovieList()
+        val position = intent.getIntExtra("moviePosition", 0)
+        var movieInfo = movieList.getMovieList().elementAt(position.toInt())
+        if(position.toInt() == 0 || position == null){
+            movieInfo = movie.last()
+        }
+        else{
+            movieInfo = movieList.getMovieList().elementAt(position.toInt())
+        }
         nameView.text =  movieInfo.getMovieTitle()
         descView.text =  movieInfo.getMovieDesc()
         languageView.text = movieInfo.getMovieLanguage()
         dateView.text = movieInfo.getMovieDate()
         suitableView.text = movieInfo.getMovieSuitable()
+
         if(review == null && starrating == null){
         var addreview = TextView(this)
         addreview.text = "add review"

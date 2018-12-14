@@ -31,18 +31,18 @@ class movieRater : AppCompatActivity() {
 
     }
     fun btnValidate():Boolean{
-        var check = true;
+        var check = true
         if(namefield.getText().isNullOrEmpty()){
             namefield.setError("Field Empty")
-            check = false;
+            check = false
         }
         if(descfield.getText().isNullOrEmpty()){
             descfield.setError("Field Empty")
-            check = false;
+            check = false
         }
         if(releasedate.getText().isNullOrEmpty()){
             releasedate.setError("Field Empty")
-            check = false;
+            check = false
         }
         return check
     }
@@ -118,6 +118,7 @@ class movieRater : AppCompatActivity() {
                 }
                 movieAL.AddMovie(newMovie)
                 val intent = Intent(this, movieDetails::class.java)
+                intent.putExtra("moviePosition", intent.getIntExtra("moviePosition", 0))
                 startActivity(intent)
             }
         }
