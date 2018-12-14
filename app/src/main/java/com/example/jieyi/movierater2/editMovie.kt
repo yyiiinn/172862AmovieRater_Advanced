@@ -154,6 +154,10 @@ class editMovie : AppCompatActivity() {
             intent.putExtra("moviePosition", position.toInt())
             startActivity(intent)
         }
+        if(item?.itemId == R.id.cancel) {
+            val intent = Intent(this, landingPage::class.java)
+            startActivity(intent)
+        }
         return super.onOptionsItemSelected(item)
     }
 

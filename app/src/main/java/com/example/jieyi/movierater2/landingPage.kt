@@ -11,6 +11,8 @@ import android.view.*
 import kotlinx.android.synthetic.main.activity_movie_rater.*
 import android.graphics.drawable.Drawable
 import android.widget.*
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
 
 
 class landingPage : AppCompatActivity() {
@@ -20,9 +22,15 @@ class landingPage : AppCompatActivity() {
         var movieArray = list.getMovieList()
         setContentView(R.layout.activity_landing_page)
         registerForContextMenu(movieList)
+
         if(movieArray.isNotEmpty()){
         val adapter = MovieAdapter(this, movieArray)
         movieList.adapter = adapter
+            movieList.onItemClickListener = AdapterView.OnItemClickListener {parent, view, position, id ->
+                // This is your listview's selected item
+                val item = movieList.getItemAtPosition(position)
+                textView8.text = item.toString()
+            }
         }
 
         super.onCreate(savedInstanceState)
@@ -52,6 +60,7 @@ class landingPage : AppCompatActivity() {
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         getMenuInflater().inflate(R.menu.addmovie_menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -80,5 +89,6 @@ class landingPage : AppCompatActivity() {
         }
         return super.onContextItemSelected(item)
     }
+
 
 }
